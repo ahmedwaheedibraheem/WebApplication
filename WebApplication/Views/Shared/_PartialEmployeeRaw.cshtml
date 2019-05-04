@@ -1,0 +1,12 @@
+﻿@model WebApplication.Models.Entities.Employee
+
+<tr id="@Model.Id">
+    <td>@Model.Name</td>
+    <td>@Model.Age</td>
+    <td>@Model.Department.Name</td>
+    <td>@Model.Gender</td>
+    <td>@Model.Email</td>
+    <td>
+        @Html.Partial("_PartialControls", Model.Id)
+    </td>
+</tr>

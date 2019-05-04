@@ -1,0 +1,27 @@
+﻿@model int
+
+@{
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+}
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <a href="@Url.Action("Details", new { id = @Model } )" class="btn btn-primary btn-sm">
+        <span class='glyphicon glyphicon-eye-open'></span>
+    </a>
+    @if (Request.IsAuthenticated)
+    {
+        <a href="@Url.Action("Edit", new { id = @Model } )" class="btn btn-success btn-sm">
+            <span class='glyphicon glyphicon-edit'></span>
+        </a>
+        <button type="button" value="Delete" class="btn btn-danger btn-sm" onclick="confirmDelete(@Model)"><span class='glyphicon glyphicon-trash'></span></button>
+    }
+
+    else if (Request.IsAuthenticated)
+    {
+        <a href="@Url.Action("Edit", new { id = @Model } )" class="btn btn-success btn-sm">
+            <span class='glyphicon glyphicon-edit'></span>
+        </a>
+        <button type="button" value="Delete" class="btn btn-danger btn-sm" onclick="confirmDelete(@Model)"><span class='glyphicon glyphicon-trash'></span></button>
+    }
+</div>
+

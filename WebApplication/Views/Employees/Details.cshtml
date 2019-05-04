@@ -1,0 +1,26 @@
+﻿@model WebApplication.Models.Entities.Employee
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<br />
+<br />
+<ul>
+    <li>
+        @Model.Name
+    </li>
+    <li>
+        @Model.Age
+    </li>
+    <li>
+        @Model.Department.Name
+    </li>
+    <li>
+        @Model.Email
+    </li>
+    <li>
+        @Model.Gender
+    </li>
+</ul>
